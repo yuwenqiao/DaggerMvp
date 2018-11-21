@@ -1,12 +1,14 @@
 package com.example.administrator.daggermvp.di_app.module;
 
 import com.example.administrator.daggermvp.bases.MyApplication;
+import com.example.administrator.daggermvp.utils.ActivityManager;
 import com.example.administrator.daggermvp.utils.RetrofitHelper;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import retrofit2.Retrofit;
 
 /**
  *  提供全局applicaContext 和 retrofit 的请求管理类
@@ -20,16 +22,28 @@ public class AppModule {
 
     @Singleton
     @Provides
-    MyApplication provideApplicationContext(){
+    MyApplication provideApplication(){
         return this.application;
     }
 
-
+    /**
+     * 网络请求处理类
+     * @return
+     */
     @Singleton
     @Provides
-    RetrofitHelper provideRetrifitHelper( ){
+    RetrofitHelper provideRetrifitHelper(Retrofit mRetrifit){
+        return  new RetrofitHelper(mRetrifit);
+    }
 
-        return  new RetrofitHelper();
+    /**
+     *  activity 管理者
+     * @return
+     */
+    @Singleton
+    @Provides
+    ActivityManager provideAppManager(){
+        return new ActivityManager();
     }
 
 }

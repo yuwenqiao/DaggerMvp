@@ -38,6 +38,16 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
     }
 
     @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         mPresenter.show();

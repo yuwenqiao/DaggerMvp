@@ -35,20 +35,20 @@ public class HttpModule {
         return builder.build();
     }
 
-    // 最好在弄一个有cache的 和无cache的 OKhttp 供后面使用
+    // 最好在弄一个有cache的 和无cache的 OKhttp 供后面使用   (Interceptor intercept, @Nullable List<Interceptor> interceptors)
     @Singleton
     @Provides
-    OkHttpClient provideHttpClient(Interceptor intercept, @Nullable List<Interceptor> interceptors){
+    OkHttpClient provideHttpClient(){
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .retryOnConnectionFailure(true)
                 .connectTimeout(10, TimeUnit.SECONDS)
-                .readTimeout(10,TimeUnit.SECONDS)
-                .addNetworkInterceptor(intercept);
-        if(interceptors!=null){ //如果外部提供了interceptors的集合遍历添加
-            for(Interceptor interceptor:interceptors){
-                builder.addInterceptor(interceptor);
-            }
-        }
+                .readTimeout(10,TimeUnit.SECONDS);
+//                .addNetworkInterceptor(intercept);
+//        if(interceptors!=null){ //如果外部提供了interceptors的集合遍历添加
+//            for(Interceptor interceptor:interceptors){
+//                builder.addInterceptor(interceptor);
+//            }
+//        }
         return builder.build();
     }
 
@@ -61,6 +61,6 @@ public class HttpModule {
     @Singleton
     @Provides
     String provideStr(){
-        return "this appli";
+        return "http://www.baidu./";
     }
 }
