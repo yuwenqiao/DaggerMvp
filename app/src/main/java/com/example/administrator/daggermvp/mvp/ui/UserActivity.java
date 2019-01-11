@@ -9,7 +9,7 @@ import android.view.View;
 import com.example.administrator.daggermvp.MainActivity;
 import com.example.administrator.daggermvp.R;
 import com.example.administrator.daggermvp.bases.BaseActivity;
-import com.example.administrator.daggermvp.bases.MyApplication;
+import com.example.administrator.daggermvp.bases.BaseApplication;
 import com.example.administrator.daggermvp.di_app.component.AppComponent;
 import com.example.administrator.daggermvp.mvp.contract.UserConstract;
 import com.example.administrator.daggermvp.mvp.di.component.DaggerUserComponent;
@@ -24,16 +24,14 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(UserActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                mPresenter.show();
             }
         });
     }
 
     @Override
     public void setupActivityComponent() {
-        AppComponent appComponent= ((MyApplication) getApplicationContext()).getAppComponent();
+        AppComponent appComponent= ((BaseApplication) getApplicationContext()).getAppComponent();
         DaggerUserComponent.builder().presenterModule(new PresenterModule(this)).appComponent(appComponent).build().inject(this);
     }
 
@@ -50,7 +48,7 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
     @Override
     protected void onResume() {
         super.onResume();
-        mPresenter.show();
+
     }
 
     @Override

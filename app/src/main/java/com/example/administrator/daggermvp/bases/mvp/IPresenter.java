@@ -4,7 +4,7 @@ package com.example.administrator.daggermvp.bases.mvp;
  */
 public interface IPresenter {
     /**
-     *  做一些初始化操作
+     *  做一些初始化操作,比如进入页面权限请求
      */
     void onStar();
 

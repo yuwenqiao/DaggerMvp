@@ -1,6 +1,13 @@
 package com.example.administrator.daggermvp.bases.mvp;
 
-public class BasePresenter <V extends IView,M extends IModel> implements IPresenter {
+import com.example.administrator.daggermvp.net.HttpActionHandle;
+
+/**
+ *
+ * @param <V>
+ * @param <M>
+ */
+public class BasePresenter <V extends IView,M extends IModel> implements IPresenter ,HttpActionHandle{
     protected V mView;
     protected M mModel;
 
@@ -36,5 +43,16 @@ public class BasePresenter <V extends IView,M extends IModel> implements IPresen
         }
         mModel=null;
         mView=null;
+    }
+
+
+    @Override
+    public void handleActionError(String httpFlag, String errorMsg, Exception e, Object result) {
+
+    }
+
+    @Override
+    public void handleActionSuccess(String httpFlag, Object object) {
+
     }
 }

@@ -1,4 +1,4 @@
-package com.example.administrator.daggermvp.http.api;
+package com.example.administrator.daggermvp.service.api;
 
 import com.example.administrator.daggermvp.mvp.bean.User;
 

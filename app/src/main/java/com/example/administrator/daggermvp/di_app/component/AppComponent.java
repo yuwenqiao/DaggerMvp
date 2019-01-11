@@ -1,10 +1,9 @@
 package com.example.administrator.daggermvp.di_app.component;
 
-import com.example.administrator.daggermvp.bases.MyApplication;
+import com.example.administrator.daggermvp.bases.BaseApplication;
 import com.example.administrator.daggermvp.di_app.module.AppModule;
 import com.example.administrator.daggermvp.di_app.module.HttpModule;
 import com.example.administrator.daggermvp.utils.ActivityManager;
-import com.example.administrator.daggermvp.utils.RetrofitHelper;
 
 import javax.inject.Singleton;
 
@@ -23,10 +22,8 @@ public interface AppComponent {
     //图片管理器，用于加载图片的管理类，默认使用Glide
     //ImageLoader imageLoader();
 
-    MyApplication getAppContext();  //提供APP 的Context
-
-    RetrofitHelper retrofitHelper();
+    BaseApplication getAppContext();  //提供APP 的Context
 
     // PreferenceHelper  preferenceHelpere();
-    void inject(MyApplication application);
+    void inject(BaseApplication application);
 }

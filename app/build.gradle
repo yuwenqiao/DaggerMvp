@@ -48,4 +48,6 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
 
     implementation 'com.google.code.gson:gson:2.5'   //json解析
+    /** android 最新布局**/
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }

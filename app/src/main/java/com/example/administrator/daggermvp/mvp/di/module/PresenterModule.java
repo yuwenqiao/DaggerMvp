@@ -7,6 +7,9 @@ import com.example.administrator.daggermvp.mvp.model.UserModel;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * 提供view 和model 实例
+ */
 @Module
 public class PresenterModule {
 
@@ -24,5 +27,6 @@ public class PresenterModule {
     UserConstract.Model provideModel (UserModel model){
         return  model;
     }
+
 
 }
