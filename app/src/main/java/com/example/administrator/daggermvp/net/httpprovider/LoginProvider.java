@@ -30,6 +30,7 @@ public class LoginProvider extends BaseRequestProvider {
      *                 Create Date:
      */
     public void requestLogin(String httpFlag, String requestUrl, String phone, String pwd) {
+        Log.i("dagger","text");
         Map<String, Object> map = new HashMap<>();
         map.put("mobilePhone", phone);
         map.put("loginPassword", pwd);

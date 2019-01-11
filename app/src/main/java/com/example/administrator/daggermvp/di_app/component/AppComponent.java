@@ -24,6 +24,6 @@ public interface AppComponent {
 
     BaseApplication getAppContext();  //提供APP 的Context
 
-    // PreferenceHelper  preferenceHelpere();
+    //在application中注入
     void inject(BaseApplication application);
 }

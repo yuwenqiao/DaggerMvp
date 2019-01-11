@@ -19,7 +19,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * 提供网络相关
+ * 提供Retrofit 实例依赖
  */
 @Module
 public class HttpModule {

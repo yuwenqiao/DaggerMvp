@@ -21,10 +21,8 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         setupActivityComponent();
         activityManager.addActivity(this);
     }
-
-    public void setupActivityComponent(){
-
-    }
+    // 注入器注入的地方
+    public abstract void setupActivityComponent();
     @Override
     protected void onDestroy() {
         super.onDestroy();

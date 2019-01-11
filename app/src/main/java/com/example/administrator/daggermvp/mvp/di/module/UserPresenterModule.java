@@ -8,13 +8,14 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * 提供view 和model 实例
+ * 为创建presenter实例提供构造中需要的 view 和model 实例
  */
 @Module
-public class PresenterModule {
+public class UserPresenterModule {
 
     private UserConstract.View view;
-    public PresenterModule (UserConstract.View  view){
+    //只能通过在view注入的地方将view添加进来作为依赖
+    public UserPresenterModule(UserConstract.View  view){
         this.view=view;
     }
     @ActivityScope
@@ -24,8 +25,8 @@ public class PresenterModule {
     }
     @ActivityScope
     @Provides
-    UserConstract.Model provideModel (UserModel model){
-        return  model;
+    UserConstract.Model provideModel (){
+        return  new UserModel();
     }
 
 

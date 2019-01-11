@@ -1,19 +1,17 @@
 package com.example.administrator.daggermvp.mvp.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.example.administrator.daggermvp.MainActivity;
 import com.example.administrator.daggermvp.R;
 import com.example.administrator.daggermvp.bases.BaseActivity;
 import com.example.administrator.daggermvp.bases.BaseApplication;
 import com.example.administrator.daggermvp.di_app.component.AppComponent;
 import com.example.administrator.daggermvp.mvp.contract.UserConstract;
 import com.example.administrator.daggermvp.mvp.di.component.DaggerUserComponent;
-import com.example.administrator.daggermvp.mvp.di.module.PresenterModule;
+import com.example.administrator.daggermvp.mvp.di.module.UserPresenterModule;
 import com.example.administrator.daggermvp.mvp.presenter.UserPresenter;
 
 public class UserActivity extends BaseActivity<UserPresenter> implements UserConstract.View{
@@ -32,7 +30,7 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
     @Override
     public void setupActivityComponent() {
         AppComponent appComponent= ((BaseApplication) getApplicationContext()).getAppComponent();
-        DaggerUserComponent.builder().presenterModule(new PresenterModule(this)).appComponent(appComponent).build().inject(this);
+        DaggerUserComponent.builder().userPresenterModule(new UserPresenterModule(this)).appComponent(appComponent).build().inject(this);
     }
 
     @Override
