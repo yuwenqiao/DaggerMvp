@@ -1,12 +1,13 @@
 package com.example.administrator.daggermvp.net.httpprovider;
 
-import android.util.Log;
 import com.example.administrator.daggermvp.bases.BaseApplication;
 import com.example.administrator.daggermvp.net.HttpActionHandle;
 import com.example.administrator.daggermvp.net.retrofit.RetrofitClients;
 
 import java.io.File;
 import java.util.Map;
+
+import io.reactivex.Observable;
 
 /**
  * 请求接口泛型，这里可以更改自己选择的网络请求框架
@@ -29,7 +30,7 @@ public class BaseRequestProvider {
      * @param actionHandle
      */
     public void get(Map<String, Object> map, final String httpFlag, String requestUrl, HttpActionHandle actionHandle){
-        retrofit2.Call<Object> call=retrofitHelper.getRetrofitApi().get(requestUrl,map);
+        Observable call=retrofitHelper.getRetrofitApi().get(requestUrl,map);
         actionHandle.handleActionSuccess(httpFlag,call);
     }
 
@@ -41,7 +42,7 @@ public class BaseRequestProvider {
      * @param actionHandle
      */
     public void post(Map<String, Object> map, final String httpFlag, String requestUrl, HttpActionHandle actionHandle){
-        retrofit2.Call<Object> call =retrofitHelper.getRetrofitApi().post(requestUrl,map);
+        Observable call =retrofitHelper.getRetrofitApi().post(requestUrl,map);
         actionHandle.handleActionSuccess(httpFlag,call);
     }
 
@@ -53,7 +54,7 @@ public class BaseRequestProvider {
      * @param actionHandle
      */
     public void downLoadFile(Map<String, Object> map, final String httpFlag, String requestUrl, HttpActionHandle actionHandle){
-        retrofit2.Call<Object> call=retrofitHelper.getRetrofitApi().downLoad(requestUrl,map);
+        Observable call=retrofitHelper.getRetrofitApi().downLoad(requestUrl,map);
         actionHandle.handleActionSuccess(httpFlag,call);
     }
 
@@ -65,7 +66,7 @@ public class BaseRequestProvider {
      * @param actionHandle
      */
     public void upLoadFile(Map<String, Object> map, final String httpFlag, String requestUrl, File file, HttpActionHandle actionHandle){
-    //    retrofit2.Call<Object> call=retrofitHelper.getRetrofitApi().upLoad(requestUrl,file);
+    //   Observable call=retrofitHelper.getRetrofitApi().upLoad(requestUrl,file);
      //   actionHandle.handleActionSuccess(httpFlag,call);
     }
 }

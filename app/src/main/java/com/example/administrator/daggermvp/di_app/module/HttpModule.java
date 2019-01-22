@@ -1,21 +1,18 @@
 package com.example.administrator.daggermvp.di_app.module;
 
-import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -31,7 +28,7 @@ public class HttpModule {
                 .baseUrl(base_url) //域名
                 .client(client) // okhttp
                 .addConverterFactory(GsonConverterFactory.create(gson))   //数据解析
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) ; //支持Rxjava
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) ; //支持Rxjava
         return builder.build();
     }
 

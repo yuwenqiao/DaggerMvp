@@ -11,7 +11,7 @@ public class RetrofitClients {
     public RetrofitClients(Retrofit retrofit){
         this.mRetrofit=retrofit;
     }
-    public RetrofitService getRetrofitApi(){
-        return mRetrofit.create(RetrofitService.class);
+    public RetrofitApi getRetrofitApi(){
+        return mRetrofit.create(RetrofitApi.class);
     }
 }

@@ -19,6 +19,8 @@ public class BasePresenter <V extends IView,M extends IModel> implements IPresen
     public BasePresenter(V view, M model){
         this.mView=view;
         this.mModel=model;
+        //将presenter层接口回调设置给M层，设置此回调时方便以后换网络框架不影响业务层改动
+        this.mModel.setHttpActionHandle(this);
         onStar();
     }
 

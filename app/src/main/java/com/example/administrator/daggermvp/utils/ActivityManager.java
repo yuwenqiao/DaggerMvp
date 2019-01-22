@@ -1,6 +1,7 @@
 package com.example.administrator.daggermvp.utils;
 
 import android.app.Activity;
+import android.util.Log;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -36,6 +37,7 @@ public class ActivityManager {
      */
 
     public void addActivity (Activity activity){
+        Log.i("dagger","manager---"+activity.getClass().getName());
         List<Activity> activities=getActivityList();
         if(!activities.contains(activity)){
             activities.add(activity);

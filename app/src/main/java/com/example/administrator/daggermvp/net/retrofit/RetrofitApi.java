@@ -2,6 +2,7 @@ package com.example.administrator.daggermvp.net.retrofit;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -19,23 +20,23 @@ import retrofit2.http.Url;
 /**
  * 请求泛型
  */
-public interface RetrofitService {
+public interface RetrofitApi {
     @GET
-    Call<Object> get(@Url String url, @QueryMap Map<String,Object> params);
+    Observable<Object> get(@Url String url, @QueryMap Map<String,Object> params);
 
     @FormUrlEncoded
     @POST
-    Call<Object> post(@Url String url, @FieldMap Map<String,Object> params);
+    Observable<Object> post(@Url String url, @FieldMap Map<String,Object> params);
 
     @POST
-    Call<Object> postRaw(@Url String url, @Body RequestBody body);
+    Observable<Object> postRaw(@Url String url, @Body RequestBody body);
 
     @Multipart
     @POST
-    Call<Object> upLoad(@Url String url ,@Part MultipartBody.Part file);
+    Observable<Object> upLoad(@Url String url ,@Part MultipartBody.Part file);
 
     @Streaming
     @GET
-    Call<Object> downLoad(@Url String url,@QueryMap Map<String,Object> params);
+    Observable<Object> downLoad(@Url String url,@QueryMap Map<String,Object> params);
 
 }

@@ -1,4 +1,4 @@
-package com.example.administrator.daggermvp.mvp.bean;
+package com.example.administrator.daggermvp.mvp.model.bean;
 
 public class User {
     private final int id;

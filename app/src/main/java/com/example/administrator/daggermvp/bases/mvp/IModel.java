@@ -8,6 +8,12 @@ import com.example.administrator.daggermvp.net.HttpActionHandle;
 public interface IModel {
 
     /**
+     *  presenter层注册的接口回调
+     * @param httpActionHandle
+     */
+    void setHttpActionHandle(HttpActionHandle httpActionHandle);
+
+    /**
      * 在框架中 BasePresenter 的onDestroy 时会默认调用
      */
     void onDestroy();

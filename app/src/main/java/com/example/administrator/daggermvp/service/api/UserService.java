@@ -1,6 +1,6 @@
 package com.example.administrator.daggermvp.service.api;
 
-import com.example.administrator.daggermvp.mvp.bean.User;
+import com.example.administrator.daggermvp.mvp.model.bean.User;
 
 import java.util.List;
 
