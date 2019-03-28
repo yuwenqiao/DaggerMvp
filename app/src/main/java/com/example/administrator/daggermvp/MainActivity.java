@@ -14,6 +14,10 @@ import com.example.administrator.daggermvp.mvp.di.component.DaggerMainComponent;
 import com.example.administrator.daggermvp.mvp.di.module.MainPresenterModule;
 import com.example.administrator.daggermvp.mvp.presenter.MainPresenter;
 import com.example.administrator.daggermvp.mvp.ui.UserActivity;
+import com.uber.autodispose.AutoDispose;
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
+
+import io.reactivex.Observable;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainConstract.View{
 
@@ -28,6 +32,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                 startActivity(intent);
             }
         });
+
     }
 
     @Override

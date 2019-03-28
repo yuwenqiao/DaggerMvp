@@ -1,11 +1,13 @@
 package com.example.administrator.daggermvp.net.retrofit;
 
+import com.example.administrator.daggermvp.mvp.model.bean.UserBean;
+import com.example.administrator.daggermvp.net.HttpResponse;
+
 import java.util.Map;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -22,11 +24,11 @@ import retrofit2.http.Url;
  */
 public interface RetrofitApi {
     @GET
-    Observable<Object> get(@Url String url, @QueryMap Map<String,Object> params);
+   <T> Observable<HttpResponse<T>> get(@Url String url, @QueryMap Map<String,Object> params);
 
     @FormUrlEncoded
-    @POST
-    Observable<Object> post(@Url String url, @FieldMap Map<String,Object> params);
+    @POST("api/login")
+    Observable<HttpResponse<UserBean>> login(@FieldMap Map<String,Object> params);
 
     @POST
     Observable<Object> postRaw(@Url String url, @Body RequestBody body);

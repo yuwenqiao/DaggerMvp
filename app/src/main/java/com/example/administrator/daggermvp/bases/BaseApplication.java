@@ -30,6 +30,8 @@ public class BaseApplication extends Application {
     public static BaseApplication getInstance() {
         return mInstance;
     }
+
+
     /**
      *  提供AppComponent  供其它component依赖使用，主要是使用全局中的实力类如：ActivityManager
      * @return

@@ -1,8 +1,10 @@
 package com.example.administrator.daggermvp.mvp.ui;
 
+import android.arch.lifecycle.Lifecycle;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 
 import com.example.administrator.daggermvp.R;
@@ -13,6 +15,15 @@ import com.example.administrator.daggermvp.mvp.contract.UserConstract;
 import com.example.administrator.daggermvp.mvp.di.component.DaggerUserComponent;
 import com.example.administrator.daggermvp.mvp.di.module.UserPresenterModule;
 import com.example.administrator.daggermvp.mvp.presenter.UserPresenter;
+import com.example.administrator.daggermvp.utils.DialogUtils;
+import com.uber.autodispose.AutoDispose;
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
+
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+
+import static com.uber.autodispose.AutoDispose.autoDisposable;
 
 public class UserActivity extends BaseActivity<UserPresenter> implements UserConstract.View{
     @Override
@@ -22,9 +33,16 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mPresenter.show();
-            }
-        });
+                 mPresenter.show();
+
+            }});
+
+
+
+
+
+
+
     }
 
     @Override
@@ -40,6 +58,7 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
 
     @Override
     public void initListener() {
+
 
     }
 

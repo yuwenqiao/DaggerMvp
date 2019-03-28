@@ -11,6 +11,7 @@ import javax.inject.Inject;
 public class MainPresenter extends BasePresenter<MainConstract.View,MainConstract.Model> {
     @Inject
     public MainPresenter(MainConstract.View view, MainConstract.Model model) {
+
         super(view, model);
     }
 

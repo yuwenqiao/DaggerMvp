@@ -1,6 +1,6 @@
 package com.example.administrator.daggermvp.service.api;
 
-import com.example.administrator.daggermvp.mvp.model.bean.User;
+import com.example.administrator.daggermvp.mvp.model.bean.UserBean;
 
 import java.util.List;
 
@@ -14,5 +14,5 @@ public interface UserService {
 
     @Headers({HEADER_API_VERSION})
     @GET("/users")
-    Observable<List<User>> getUsers(@Query("since") int lastIdQueried, @Query("per_page") int perPage);
+    Observable<List<UserBean>> getUsers(@Query("since") int lastIdQueried, @Query("per_page") int perPage);
 }
