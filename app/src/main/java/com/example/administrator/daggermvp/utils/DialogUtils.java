@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +15,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.administrator.daggermvp.R;
-import com.example.administrator.daggermvp.mvp.ui.UserActivity;
-
-import javax.inject.Inject;
 
 /**
  * 传统标准dialog，底部两个或者一个按钮

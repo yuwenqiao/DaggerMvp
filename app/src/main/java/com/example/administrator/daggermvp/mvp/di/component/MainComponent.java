@@ -4,8 +4,6 @@ import com.example.administrator.daggermvp.MainActivity;
 import com.example.administrator.daggermvp.di_app.component.AppComponent;
 import com.example.administrator.daggermvp.di_app.scope.ActivityScope;
 import com.example.administrator.daggermvp.mvp.di.module.MainPresenterModule;
-import com.example.administrator.daggermvp.mvp.di.module.UserPresenterModule;
-import com.example.administrator.daggermvp.mvp.ui.UserActivity;
 
 import dagger.Component;
 

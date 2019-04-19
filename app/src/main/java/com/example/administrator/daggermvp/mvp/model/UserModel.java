@@ -19,12 +19,9 @@ import javax.inject.Inject;
 import io.reactivex.Observable;
 
 
-public class UserModel extends BaseModel <LoginProvider>implements UserConstract.Model{
-    RetrofitClients retrofitHelper;
-    @Inject
+public class UserModel extends BaseModel implements UserConstract.Model{
+    protected RetrofitClients retrofitHelper;
     public UserModel(){
-        // 将具体的请求类实例注入到本类中   暂时无用------------------------------------------
-       // DaggerProviderComponent.builder().build().inject(this);
         retrofitHelper= BaseApplication.getInstance().getRetrofitClient();
     }
 

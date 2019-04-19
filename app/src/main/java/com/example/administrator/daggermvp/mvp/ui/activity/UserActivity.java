@@ -1,4 +1,4 @@
-package com.example.administrator.daggermvp.mvp.ui;
+package com.example.administrator.daggermvp.mvp.ui.activity;
 
 import android.arch.lifecycle.Lifecycle;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.administrator.daggermvp.R;
 import com.example.administrator.daggermvp.bases.BaseActivity;
@@ -15,34 +16,22 @@ import com.example.administrator.daggermvp.mvp.contract.UserConstract;
 import com.example.administrator.daggermvp.mvp.di.component.DaggerUserComponent;
 import com.example.administrator.daggermvp.mvp.di.module.UserPresenterModule;
 import com.example.administrator.daggermvp.mvp.presenter.UserPresenter;
-import com.example.administrator.daggermvp.utils.DialogUtils;
-import com.uber.autodispose.AutoDispose;
-import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
+import com.example.administrator.daggermvp.other_view.LoadingProgress;
 
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.Observable;
-
-import static com.uber.autodispose.AutoDispose.autoDisposable;
 
 public class UserActivity extends BaseActivity<UserPresenter> implements UserConstract.View{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+        Button btn=findViewById(R.id.btn);
+        btn.setText("user页面");
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                  mPresenter.show();
 
             }});
-
-
-
-
-
-
-
     }
 
     @Override
@@ -58,8 +47,7 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
 
     @Override
     public void initListener() {
-
-
+        initLifecycleObserver(getLifecycle());
     }
 
     @Override
@@ -70,12 +58,12 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
 
     @Override
     public void showLoading() {
-
+        LoadingProgress.showProgressDialog(this);
     }
 
     @Override
     public void hideLoading() {
-
+        LoadingProgress.dismissProgressDialog();
     }
 
     @Override

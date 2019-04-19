@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_loading_bg"
+    android:padding="20dp"
+    >
+    <ProgressBar
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:indeterminateDrawable="@drawable/animation_dialog_progress" />
+
+    <TextView
+        android:id="@+id/tv_loadingmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="8.0dip"
+        android:textColor="#fff"
+        android:textSize="16.0dip" />
+</android.support.constraint.ConstraintLayout>

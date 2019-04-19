@@ -2,7 +2,6 @@ package com.example.administrator.daggermvp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,11 +12,7 @@ import com.example.administrator.daggermvp.mvp.contract.MainConstract;
 import com.example.administrator.daggermvp.mvp.di.component.DaggerMainComponent;
 import com.example.administrator.daggermvp.mvp.di.module.MainPresenterModule;
 import com.example.administrator.daggermvp.mvp.presenter.MainPresenter;
-import com.example.administrator.daggermvp.mvp.ui.UserActivity;
-import com.uber.autodispose.AutoDispose;
-import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
-
-import io.reactivex.Observable;
+import com.example.administrator.daggermvp.mvp.ui.activity.UserActivity;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainConstract.View{
 

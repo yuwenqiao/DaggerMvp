@@ -44,7 +44,7 @@ public class HttpModule {
     OkHttpClient provideHttpClient(){
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .retryOnConnectionFailure(true)
-                .connectTimeout(10, TimeUnit.SECONDS)
+                .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(10,TimeUnit.SECONDS)
                .addInterceptor(new RequestLoggerInterceptor());
             //   .addNetworkInterceptor(mTokenInterceptor); 让网络请求附加上拦截器，比如为请求添加token参数；

@@ -51,12 +51,15 @@ public class BasePresenter <V extends IView,M extends IModel> implements IPresen
         if(mModel!=null){
             mModel.onDestroy();
         }
+        if(mView!=null){
+            mView.hideLoading();
+        }
         mModel=null;
         mView=null;
     }
 
     /**
-     * 与Observable绑定（只要是持有LifecycleOwner对象，就可以通过此方法实现绑定）
+     * 与Observable绑定生命周期，自动结束掉请求与Presenter的连接（只要是持有LifecycleOwner对象，就可以通过此方法实现绑定）
      * @return
      */
     protected <T> AutoDisposeConverter<T> bindLifecycle(){
@@ -66,7 +69,7 @@ public class BasePresenter <V extends IView,M extends IModel> implements IPresen
     }
 
     /**
-     * 获取 LifecycleOwner对象
+     * 获取 LifecycleOwner对象，以下方法均是实现IPresenter中的继承方法
      * @param owner
      */
     @Override

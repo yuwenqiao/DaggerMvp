@@ -7,7 +7,7 @@ import com.example.administrator.daggermvp.net.httpprovider.LoginProvider;
 import javax.inject.Inject;
 
 
-public class MainModel extends BaseModel <LoginProvider>implements MainConstract.Model{
+public class MainModel extends BaseModel implements MainConstract.Model{
     @Inject
     public MainModel(){
     }

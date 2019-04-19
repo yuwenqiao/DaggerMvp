@@ -9,7 +9,7 @@
        android:id="@+id/btn"
        android:layout_width="100dp"
        android:layout_height="50dp"
-       android:text="hahha"
+       android:text="tab页面"
        android:textColor="#000"
        />
 

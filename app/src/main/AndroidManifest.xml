@@ -14,14 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.administrator.daggermvp.MainActivity">
+
+        </activity>
+        <activity android:name=".mvp.ui.activity.UserActivity">
+
+        </activity>
+        <activity android:name=".mvp.ui.activity.FrameActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".mvp.ui.UserActivity">
-
         </activity>
     </application>
 

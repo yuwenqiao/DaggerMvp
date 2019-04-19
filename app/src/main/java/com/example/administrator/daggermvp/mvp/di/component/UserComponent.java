@@ -3,7 +3,7 @@ package com.example.administrator.daggermvp.mvp.di.component;
 import com.example.administrator.daggermvp.di_app.component.AppComponent;
 import com.example.administrator.daggermvp.di_app.scope.ActivityScope;
 import com.example.administrator.daggermvp.mvp.di.module.UserPresenterModule;
-import com.example.administrator.daggermvp.mvp.ui.UserActivity;
+import com.example.administrator.daggermvp.mvp.ui.activity.UserActivity;
 
 import dagger.Component;
 

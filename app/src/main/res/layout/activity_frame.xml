@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_radioGroup"
+        app:layout_constraintTop_toTopOf="parent"
+       >
+
+    </FrameLayout>
+    <RadioGroup
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/main_radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tab_first"
+            style="@style/main_tab_radio_style"
+            android:drawableTop="@drawable/tab_icon_first_select"
+            android:focusable="false"
+            android:text="首页"
+            />
+
+        <RadioButton
+            android:id="@+id/tab_second"
+            style="@style/main_tab_radio_style"
+            android:drawableTop="@drawable/tab_icon_first_select"
+            android:focusable="false"
+            android:text="首页" />
+
+
+
+        <RadioButton
+            android:id="@+id/tab_third"
+            style="@style/main_tab_radio_style"
+            android:drawableTop="@drawable/tab_icon_first_select"
+            android:focusable="false"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/tab_four"
+            style="@style/main_tab_radio_style"
+            android:drawableTop="@drawable/tab_icon_first_select"
+            android:focusable="false"
+            android:text="首页" />
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

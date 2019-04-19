@@ -17,7 +17,7 @@ public class BaseApplication extends Application {
     private static BaseApplication mInstance;
     @Inject
     protected RetrofitClients mRetrofitClient;
-
+    private boolean isDebug=false;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -26,6 +26,11 @@ public class BaseApplication extends Application {
         appComponent.inject(this);
         //注册网络状态广播监听
         NetBroadcastReceiver.registerReceiver(this);
+//        if(isDebug){
+//            ARouter.openLog(); //打印日志
+//            ARouter.openDebug(); //开启调试模式
+//        }
+//        ARouter.init(BaseApplication.this);
     }
     public static BaseApplication getInstance() {
         return mInstance;
@@ -42,5 +47,11 @@ public class BaseApplication extends Application {
 
     public  RetrofitClients getRetrofitClient(){
         return mRetrofitClient;
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+     //   ARouter.getInstance().destroy();
     }
 }

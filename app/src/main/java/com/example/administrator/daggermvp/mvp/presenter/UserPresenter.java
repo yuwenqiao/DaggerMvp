@@ -12,6 +12,8 @@ import com.example.administrator.daggermvp.utils.rx.RxUtil;
 
 import javax.inject.Inject;
 
+import io.reactivex.disposables.Disposable;
+
 
 @ActivityScope
 public class UserPresenter extends BasePresenter<UserConstract.View,UserConstract.Model> {
@@ -28,12 +30,18 @@ public class UserPresenter extends BasePresenter<UserConstract.View,UserConstrac
                    .subscribe(new BaseObserver<UserBean>() {
                        @Override
                        public void onSuccess(UserBean userBean) {
-
+                           mView.hideLoading();
+                            //  明天叫请求时间调长，模拟请求，页面onpause时看请求是否终止----------------------------------------------------------------------------
                        }
 
                        @Override
                        public void onFail(RequestException e) {
+                            mView.hideLoading();
+                       }
 
+                       @Override
+                       public void onSubscrebe(Disposable d) {
+                           mView.showLoading();
                        }
                    });
 
